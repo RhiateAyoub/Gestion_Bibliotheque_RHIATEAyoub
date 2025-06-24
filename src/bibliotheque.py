@@ -20,7 +20,7 @@ class Livre:
         if not self.disponible:
             self.disponible = True
         else:
-            print("Erreur! Le livre n'est pas emprunté.")
+            raise LivreIndisponibleError("Le livre n'est pas emprunté.")
 
     def to_dict(self):
         return {
@@ -61,7 +61,7 @@ class Membre:
             livre.rendre()
             self.livres_empruntes.remove(livre)
         else:
-            print("Erreur! Le livre n'est pas emprunté.")
+            raise LivreIndisponibleError("Le livre n'est pas emprunté.")
 
     def to_dict(self):
         return {
@@ -112,15 +112,13 @@ class Bibliotheque:
                 mbr = membre
                 break
         if mbr is None:
-            print("ID non trouvé!")
-            return
+            raise MembreInexistantError()
         for livre in mbr.livres_empruntes:
             if livre.titre == titre_livre:
                 lvr = livre
                 break
         if lvr is None:
-            print("Ce membre n'a pas emprunté ce livre!")
-            return
+            raise LivreInexistantError("Ce membre n'a pas emprunté ce livre!")
         mbr.rendre_livre(lvr)
 
     def sauvegarder(self):

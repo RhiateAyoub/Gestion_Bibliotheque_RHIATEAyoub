@@ -3,7 +3,7 @@ class LivreIndisponibleError(Exception):
         super().__init__(message)
 
 class QuotaEmpruntDepasseError(Exception):
-    def __init__(self, message="Le quota des emprunts est depassé!"):
+    def __init__(self, message="Le quota des emprunts (3) est depassé!"):
         super().__init__(message)
 
 class MembreInexistantError(Exception):
