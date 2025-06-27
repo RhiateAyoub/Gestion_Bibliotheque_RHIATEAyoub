@@ -29,6 +29,7 @@ def valider_annee(prompt):
             raise SaisieInvalideError("L'année ne peut pas être négative.")
         return annee
 
+# Validation de l'ID:
 def valider_id(prompt):
     while True:
         id = saisir_non_vide(prompt)
@@ -36,6 +37,7 @@ def valider_id(prompt):
             raise SaisieInvalideError("L'ID doit contenir seulement des chiffres.")
         return id
 
+# Validation de l'ISBN:
 def valider_isbn(prompt):
     while True:
         isbn = saisir_non_vide(prompt)
@@ -43,6 +45,8 @@ def valider_isbn(prompt):
             return isbn
         raise SaisieInvalideError("ISBN Invalide. Exemple de format accepté: 978-0-306-40615-7")
 
+
+# --------------------- Main ---------------------
 biblio = Bibliotheque()
 biblio.charger()
 
@@ -78,7 +82,7 @@ while True:
                 id_membre = valider_id("ID membre: ")
                 titre = saisir_non_vide("Titre: ")
                 biblio.rendre_livre(id_membre, titre)
-                print("Livre rendu avec succès! ID Membre: ", id_membre)
+                print("Livre retourné avec succès! ID Membre: ", id_membre)
             # 5. Lister tous les livres ---------------------
             case "5":
                 print("---------- Liste des livres ----------\n" + biblio.lister_livres())

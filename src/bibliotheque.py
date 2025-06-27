@@ -69,7 +69,7 @@ class Membre:
         return (
             f"Nom: {self.nom}\n"
             f"ID: {self.id_membre}\n"
-            f"Livres empruntés: {[livre.isbn for livre in self.livres_empruntes]}\n"
+            f"Livres empruntés: {[livre.titre for livre in self.livres_empruntes]}\n"
         )
 
     def emprunter_livre(self, livre:Livre):
@@ -177,6 +177,7 @@ class Bibliotheque:
         if lvr is None:
             raise LivreInexistantError("Ce membre n'a pas emprunté ce livre!")
         mbr.rendre_livre(lvr)
+        enregistrer_action(mbr.id_membre, lvr.isbn, "retour")
 
     # Sauvegarder et charger les données des fichiers json
     def sauvegarder(self):

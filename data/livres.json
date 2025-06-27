@@ -1,11 +1,11 @@
 [
     {
-        "isbn": "1234567890",
+        "isbn": "978-2-07-040918-1",
         "titre": "Les Mis\u00e9rables",
         "auteur": "Victor Hugo",
         "annee": 1862,
         "genre": "Roman",
-        "disponible": false
+        "disponible": true
     },
     {
         "isbn": "978-2-07-061275-8",
@@ -13,7 +13,7 @@
         "auteur": "Antoine de Saint-Exup\u00e9ry",
         "annee": 1943,
         "genre": "Conte",
-        "disponible": true
+        "disponible": false
     },
     {
         "isbn": "978-0-452-28423-4",
@@ -21,6 +21,38 @@
         "auteur": "George Orwell",
         "annee": 1949,
         "genre": "Dystopie",
-        "disponible": false
+        "disponible": true
+    },
+    {
+        "isbn": "978-2-07-036002-4",
+        "titre": "L'\u00c9tranger",
+        "auteur": "Albert Camus",
+        "annee": 1942,
+        "genre": "Roman",
+        "disponible": true
+    },
+    {
+        "isbn": "978-2-07-064302-8",
+        "titre": "Harry Potter \u00e0 l'\u00e9cole des sorciers",
+        "auteur": "J.K. Rowling",
+        "annee": 1997,
+        "genre": "Fantasy",
+        "disponible": true
+    },
+    {
+        "isbn": "978-2-07-036042-0",
+        "titre": "La Peste",
+        "auteur": "Albert Camus",
+        "annee": 1947,
+        "genre": "Roman",
+        "disponible": true
+    },
+    {
+        "isbn": "978-2-07-061288-1",
+        "titre": "Le Seigneur des Anneaux",
+        "auteur": "J.R.R. Tolkien",
+        "annee": 1954,
+        "genre": "Fantasy",
+        "disponible": true
     }
 ]

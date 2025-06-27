@@ -2,6 +2,10 @@ import matplotlib.pyplot as plt
 from collections import Counter
 import csv
 from datetime import datetime, timedelta
+import os
+
+# Si le dossier n'existe pas, créer le:
+os.makedirs("assets", exist_ok=True)
 
 # --------------------- Répartition des livres par genre ---------------------
 def diagramme_genres(livres):
@@ -14,6 +18,7 @@ def diagramme_genres(livres):
     plt.title("Répartition des livres par genre")
     plt.axis('equal')
     plt.tight_layout()
+    plt.savefig("assets/stats_genres.png")
     plt.show()
 
 
@@ -33,6 +38,7 @@ def top_auteurs(livres, top_n=10):
     plt.ylabel("Nombre de livres")
     plt.xticks(rotation=45, ha="right")
     plt.tight_layout()
+    plt.savefig("assets/stats_auteurs.png")
     plt.show()
 
 
@@ -69,4 +75,5 @@ def activite_emprunts(fichier_csv):
     plt.xticks(rotation=45)
     plt.grid(True)
     plt.tight_layout()
+    plt.savefig("assets/stats_emprunts.png")
     plt.show()

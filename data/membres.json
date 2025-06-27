@@ -1,6 +1,6 @@
 [
     {
-        "id_membre": "1001",
+        "id_membre": "101",
         "nom": "Rhiate Ayoub",
         "livres_empruntes": []
     },
@@ -8,14 +8,32 @@
         "id_membre": "102",
         "nom": "Lina Benali",
         "livres_empruntes": [
-            "978-0-452-28423-4"
+            "978-2-07-061275-8"
         ]
     },
     {
         "id_membre": "103",
         "nom": "Adam Bensaid",
-        "livres_empruntes": [
-            "1234567890"
-        ]
+        "livres_empruntes": []
+    },
+    {
+        "id_membre": "104",
+        "nom": "Sara El Alaoui",
+        "livres_empruntes": []
+    },
+    {
+        "id_membre": "105",
+        "nom": "Mehdi Othmani",
+        "livres_empruntes": []
+    },
+    {
+        "id_membre": "106",
+        "nom": "Amal Driouich",
+        "livres_empruntes": []
+    },
+    {
+        "id_membre": "107",
+        "nom": "Youssef Kabbaj",
+        "livres_empruntes": []
     }
 ]
