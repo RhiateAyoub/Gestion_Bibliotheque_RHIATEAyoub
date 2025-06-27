@@ -1,0 +1,22 @@
+[
+    {
+        "id_membre": "1001",
+        "nom": "Rhiate Ayoub",
+        "livres_empruntes": []
+    },
+    {
+        "id_membre": "102",
+        "nom": "Lina Benali",
+        "livres_empruntes": [
+            "978-2-07-061275-8",
+            "978-0-452-28423-4"
+        ]
+    },
+    {
+        "id_membre": "103",
+        "nom": "Adam Bensaid",
+        "livres_empruntes": [
+            "1234567890"
+        ]
+    }
+]

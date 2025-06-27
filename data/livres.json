@@ -1,0 +1,26 @@
+[
+    {
+        "isbn": "1234567890",
+        "titre": "Les Mis\u00e9rables",
+        "auteur": "Victor Hugo",
+        "annee": 1862,
+        "genre": "Roman",
+        "disponible": false
+    },
+    {
+        "isbn": "978-2-07-061275-8",
+        "titre": "Le Petit Prince",
+        "auteur": "Antoine de Saint-Exup\u00e9ry",
+        "annee": 1943,
+        "genre": "Conte",
+        "disponible": false
+    },
+    {
+        "isbn": "978-0-452-28423-4",
+        "titre": "1984",
+        "auteur": "George Orwell",
+        "annee": 1949,
+        "genre": "Dystopie",
+        "disponible": false
+    }
+]

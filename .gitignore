@@ -1,0 +1,9 @@
+# OS specific files (macOS, Windows)
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# pycache folder
+src/__pycache__/
