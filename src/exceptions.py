@@ -17,3 +17,11 @@ class LivreInexistantError(Exception):
 class SaisieInvalideError(Exception):
     def __init__(self, message="Saisie Invalide!"):
         super().__init__(message)
+
+class LivreDejaExistantError(Exception):
+    def __init__(self, message="Un livre avec cet ISBN est déja existant!"):
+        super().__init__(message)
+
+class MembreDejaExistantError(Exception):
+    def __init__(self, message="Un membre avec cet ID est déja inscrit!"):
+        super().__init__(message)

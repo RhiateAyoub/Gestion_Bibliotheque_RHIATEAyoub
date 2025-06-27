@@ -132,9 +132,17 @@ class Bibliotheque:
         return res
 
     def ajouter_livre(self, livre:Livre):
+        # Vérifier si le livre n'existe pas déja dans la bibliothèque
+        for l in self.livres:
+            if l.isbn == livre.isbn:
+                raise LivreDejaExistantError()
         self.livres.append(livre)
 
     def ajouter_membre(self, membre:Membre):
+        # Vérifier si le membre n'est pas déja inscrit dans la bibliothèque
+        for m in self.membres:
+            if m.id_membre == membre.id_membre:
+                raise MembreDejaExistantError()
         self.membres.append(membre)
         
     def emprunter_livre(self, id_membre, titre_livre):
