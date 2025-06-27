@@ -1,4 +1,5 @@
 import json
+import os
 from exceptions import *
 import csv
 from datetime import datetime
@@ -183,8 +184,22 @@ class Bibliotheque:
 
 # Ecrire les actions (emprunts ou retours) dans le fichier historique.csv
 def enregistrer_action(id_membre, isbn, action="emprunt", fichier="data/historique.csv"):
+    # Vérifier si le fichier existe:
+    file_exists = os.path.isfile(fichier)
+    write_header = False
+
+    if not file_exists:
+        write_header = True
+    else:
+        # Vérifier si le fichier est vide:
+        if os.path.getsize(fichier) == 0:
+            write_header = True
+
     with open(fichier, mode='a', newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=["date", "isbn", "id_membre", "action"])
+        # Ecrire l'en-tête si le fichier est vide:
+        if write_header:
+            writer.writeheader()
         writer.writerow({
             "date": datetime.now().strftime("%Y-%m-%d"),
             "isbn": isbn,
