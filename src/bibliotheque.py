@@ -141,7 +141,7 @@ class Bibliotheque:
         mbr = None
         lvr = None
 
-        # Chercher le membre correspondat au id saisi
+        # Chercher le membre correspondat au ID saisi
         for membre in self.membres:
             if membre.id_membre == id_membre:
                 mbr = membre

@@ -13,3 +13,7 @@ class MembreInexistantError(Exception):
 class LivreInexistantError(Exception):
     def __init__(self, message="Ce livre est inexistant!"):
         super().__init__(message)
+
+class SaisieInvalideError(Exception):
+    def __init__(self, message="Saisie Invalide!"):
+        super().__init__(message)

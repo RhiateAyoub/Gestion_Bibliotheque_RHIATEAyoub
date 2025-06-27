@@ -3,6 +3,7 @@ from collections import Counter
 import csv
 from datetime import datetime, timedelta
 
+# --------------------- Répartition des livres par genre ---------------------
 def diagramme_genres(livres):
     # Retrouver les genres
     genres = [livre.genre for livre in livres]
@@ -15,6 +16,8 @@ def diagramme_genres(livres):
     plt.tight_layout()
     plt.show()
 
+
+# --------------------- Top N des auteurs les plus populaires ---------------------
 def top_auteurs(livres, top_n=10):
     # Retrouver les auteurs
     auteurs = [livre.auteur for livre in livres]
@@ -33,6 +36,7 @@ def top_auteurs(livres, top_n=10):
     plt.show()
 
 
+# --------------------- Activité des emprunts (30 derniers jours) ---------------------
 def activite_emprunts(fichier_csv):
     dates = []
 
