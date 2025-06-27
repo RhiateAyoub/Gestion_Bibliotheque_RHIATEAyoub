@@ -65,6 +65,13 @@ class Membre:
         self.nom = nom
         self.livres_empruntes = []
 
+    def __str__(self):
+        return (
+            f"Nom: {self.nom}\n"
+            f"ID: {self.id_membre}\n"
+            f"Livres empruntés: {[livre.isbn for livre in self.livres_empruntes]}\n"
+        )
+
     def emprunter_livre(self, livre:Livre):
         # Un membre ne peut pas emprunter plus de 3 livres en même temps:
         if len(self.livres_empruntes) >= 3:
@@ -112,6 +119,16 @@ class Bibliotheque:
         res = ""
         for livre in self.livres:
             res += str(livre) + "\n"
+        return res
+    
+    def lister_membres(self):
+        if not self.membres:
+            return "Aucun membre est inscrit dans la bibliothèque."
+        
+        # Utilisation de __str__ pour afficher les données de chaque membre
+        res = ""
+        for membre in self.membres:
+            res += str(membre) + "\n"
         return res
 
     def ajouter_livre(self, livre:Livre):

@@ -8,8 +8,9 @@ def menu():
     print("  3. Emprunter un livre")
     print("  4. Rendre un livre")
     print("  5. Lister tous les livres")
-    print("  6. Afficher les statistiques")
-    print("  7. Sauvegarder et quitter")
+    print("  6. Lister tous les membres")
+    print("  7. Afficher les statistiques")
+    print("  8. Sauvegarder et quitter")
 
 biblio = Bibliotheque()
 biblio.charger()
@@ -44,8 +45,10 @@ while True:
                 biblio.rendre_livre(id_membre, titre)
                 print("Livre rendu avec succès! ID Membre: ", id_membre)
             case "5":
-                print(biblio.lister_livres())
+                print("---------- Liste des livres ----------\n" + biblio.lister_livres())
             case "6":
+                print("---------- Liste des membres ----------\n" + biblio.lister_membres())
+            case "7":
                 print("---- Visualisations ----")
                 print("-- 1. Répartition des livres par genre")
                 print("-- 2. Top N auteurs les plus populaires")
@@ -62,7 +65,7 @@ while True:
                     case "3":
                         print("Visualisatoin de l'activité des emprunts...")
                         activite_emprunts("data/historique.csv")
-            case "7":
+            case "8":
                 biblio.sauvegarder()
                 print("Données sauvegardées. À bientôt !")
                 break
