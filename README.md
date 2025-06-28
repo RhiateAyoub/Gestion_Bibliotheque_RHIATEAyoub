@@ -110,7 +110,7 @@ Titre: Le Petit Prince
 ### 📈 Visualiser les statistiques :
 
 * Répartition des genres (camembert)
-* Top auteurs les plus fréquents
+* Auteurs les plus fréquents
 * Activité des emprunts (30 jours)
 
 ---

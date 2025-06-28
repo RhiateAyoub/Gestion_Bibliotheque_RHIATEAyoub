@@ -109,9 +109,9 @@ while True:
                             diagramme_genres(biblio.livres)
                             break
                         case "2":
-                            top = input("Donner N (le nombre des auteurs): ")
+                            top = int(input("Donner N (le nombre des auteurs): "))
                             print(f"Visualisation de Top {top} auteurs les plus populaires...")
-                            top_auteurs(biblio.livres, 10)
+                            top_auteurs(biblio.livres, top)
                             break
                         case "3":
                             print("Visualisatoin de l'activité des emprunts...")
