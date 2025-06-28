@@ -24,15 +24,16 @@ def diagramme_genres(livres):
 
 # --------------------- Top N des auteurs les plus populaires ---------------------
 def top_auteurs(livres, top_n=10):
-    # Retrouver les auteurs
+    # Récupérer les auteurs:
     auteurs = [livre.auteur for livre in livres]
+    # Filtrer les auteurs les plus populaires:
     auteur_count = Counter(auteurs).most_common(top_n)
 
-    noms = [a[0] for a in auteur_count]
-    nb_livres = [a[1] for a in auteur_count]
+    noms = [a[0] for a in auteur_count] # Liste pour l'axe des abscisses
+    nb_livres = [a[1] for a in auteur_count] # Liste pour l'axe des ordonnées
 
     plt.figure(figsize=(10, 5))
-    plt.bar(noms, nb_livres, color='darkorange')
+    plt.bar(noms, nb_livres, color='cyan')
     plt.title(f"Top {top_n} des auteurs les plus populaires")
     plt.xlabel("Auteur")
     plt.ylabel("Nombre de livres")
@@ -59,12 +60,15 @@ def activite_emprunts(fichier_csv):
                 except ValueError:
                     continue
 
+    # Regrouper les jours du dernier mois et associer les emprunts aux jours:
     aujourd_hui = datetime.now().date()
     il_y_a_30_jours = aujourd_hui - timedelta(days=30)
     dates_recents = [d for d in dates if il_y_a_30_jours <= d <= aujourd_hui]
 
-    activite = Counter(dates_recents)
-    jours = [il_y_a_30_jours + timedelta(days=i) for i in range(31)]
+    activite = Counter(dates_recents) # Compter les emprunts par jour
+    jours = [il_y_a_30_jours + timedelta(days=i) for i in range(31)] # Liste des dates pour l'axe des abscisses
+    
+    # Récupérer les emprunts pour chaque jour de l'axe (affecter 0 s'il n'y en a pas):
     emprunts_par_jour = [activite.get(jour, 0) for jour in jours]
 
     plt.figure(figsize=(12, 5))

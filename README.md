@@ -8,16 +8,24 @@ Le projet inclut également des visualisations graphiques avec `matplotlib` pour
 
 ---
 
+## 👨‍💻 Auteur
+
+Ayoub Rhiate.
+
+Développé dans le cadre d’un mini-projet universitaire en génie informatique 🧠💻
+
+---
+
 ### 🛠️ Fonctionnalités
 
 * Ajouter et lister des livres
 * Inscrire des membres
-* Emprunter et rendre des livres (avec vérifications et exceptions personnalisées)
-* Sauvegarde automatique des données (`.json` / `.csv`)
+* Emprunter et rendre des livres
+* Sauvegarde et persistance des données (`.json` / `.csv`)
 * Visualisations :
 
-  * Diagramme circulaire des genres
-  * Top N auteurs les plus populaires
+  * Diagramme circulaire des genres de livres
+  * Auteurs les plus populaires
   * Courbe des emprunts des 30 derniers jours
 
 ---
@@ -29,13 +37,13 @@ Le projet inclut également des visualisations graphiques avec `matplotlib` pour
 * Python 3.10 ou plus recommandé
 * `pip` (gestionnaire de paquets)
 
-**Cloner le dépôt**
+1. **Cloner le dépôt**
 
 ```bash
 git clone https://github.com/RhiateAyoub/Gestion_Bibliotheque_RHIATEAyoub
 cd CheminVers/gestion-bibliotheque
 ```
-### 📦 Installer les dépendances
+2. **📦 Installer les dépendances**
 
 ```bash
 pip install -r requirements.txt
@@ -66,8 +74,9 @@ Vous verrez un menu interactif :
   3. Emprunter un livre
   4. Rendre un livre
   5. Lister tous les livres
-  6. Afficher les statistiques
-  7. Sauvegarder et quitter
+  6. Lister tous les membres
+  7. Afficher les statistiques
+  8. Sauvegarder et quitter
 ```
 
 ---
@@ -133,13 +142,4 @@ Gestion_Bibliotheque/
 │
 ├── requirements.txt
 └── README.md
-
 ```
-
----
-
-## 👨‍💻 Auteur
-
-Ayoub Rhiate.
-
-Développé dans le cadre d’un mini-projet universitaire en génie informatique 🧠💻

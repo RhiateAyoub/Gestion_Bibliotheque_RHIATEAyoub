@@ -7,9 +7,7 @@
     {
         "id_membre": "102",
         "nom": "Lina Benali",
-        "livres_empruntes": [
-            "978-2-07-061275-8"
-        ]
+        "livres_empruntes": []
     },
     {
         "id_membre": "103",

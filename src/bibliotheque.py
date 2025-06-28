@@ -6,6 +6,7 @@ from datetime import datetime
 
 # --------------------- Classe Livre ---------------------
 class Livre:
+    # disponible = False => le livre est emprunté
     def __init__(self, isbn, titre, auteur, annee, genre, disponible=True):
         self.isbn = isbn
         self.titre = titre
@@ -25,16 +26,18 @@ class Livre:
         )
 
     def emprunter(self):
+        # Si le livre est disponible on peut l'emprunter
         if self.disponible:
             self.disponible = False
         else:
             raise LivreIndisponibleError()
 
     def rendre(self):
+        # Si le livre n'est pas disponible (emprunté) on peut le rendre
         if not self.disponible:
             self.disponible = True
         else:
-            raise LivreIndisponibleError("Le livre n'est pas emprunté ligne 35.")
+            raise LivreIndisponibleError("Le livre n'est pas emprunté.")
 
     def to_dict(self):
         return {
@@ -85,6 +88,7 @@ class Membre:
     def rendre_livre(self, livre:Livre):
         if not livre.disponible:
             livre.rendre()
+            # Actualiser la liste des livres empruntés:
             self.livres_empruntes = [l for l in self.livres_empruntes if l.isbn != livre.isbn]
         else:
             raise LivreIndisponibleError("Le livre n'est pas emprunté.")
@@ -149,7 +153,7 @@ class Bibliotheque:
         mbr = None
         lvr = None
 
-        # Chercher le membre correspondat au ID saisi
+        # Récupérer le membre correspondat au ID saisi
         for membre in self.membres:
             if membre.id_membre == id_membre:
                 mbr = membre
@@ -157,7 +161,7 @@ class Bibliotheque:
         if mbr is None:
             raise MembreInexistantError()
         
-        # Chercher le livre correspondant au titre saisi
+        # Récupérer le livre correspondant au titre saisi
         for livre in self.livres:
             if livre.titre == titre_livre:
                 lvr = livre
@@ -170,14 +174,16 @@ class Bibliotheque:
     def rendre_livre(self, id_membre, titre_livre):
         mbr = None
         lvr = None
-        # Chercher le membre correspondat au id saisi
+        
+        # Récupérer le membre correspondat au id saisi
         for membre in self.membres:
             if membre.id_membre == id_membre:
                 mbr = membre
                 break
         if mbr is None:
             raise MembreInexistantError()
-        # Chercher le livre correspondant au titre saisi
+        
+        # Récupérer le livre correspondant au titre saisi
         for livre in mbr.livres_empruntes:
             if livre.titre == titre_livre:
                 lvr = livre
@@ -187,7 +193,7 @@ class Bibliotheque:
         mbr.rendre_livre(lvr)
         enregistrer_action(mbr.id_membre, lvr.isbn, "retour")
 
-    # Sauvegarder et charger les données des fichiers json
+    # Sauvegarder dans et charger les données des fichiers json
     def sauvegarder(self):
         with open("data/livres.json", "w", encoding="utf-8") as f:
             json.dump([livre.to_dict() for livre in self.livres], f, indent=4)
@@ -226,6 +232,7 @@ def enregistrer_action(id_membre, isbn, action="emprunt", fichier="data/historiq
         # Ecrire l'en-tête si le fichier est vide:
         if write_header:
             writer.writeheader()
+
         writer.writerow({
             "date": datetime.now().strftime("%Y-%m-%d"),
             "isbn": isbn,

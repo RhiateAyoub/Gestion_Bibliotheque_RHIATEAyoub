@@ -65,30 +65,36 @@ while True:
                 livre = Livre(isbn, titre, auteur, annee, genre)
                 biblio.ajouter_livre(livre)
                 print("Livre ajouté avec succès!")
+                
             # 2. Inscrire un membre ---------------------
             case "2":
                 id_membre = valider_id("ID membre: ")
                 nom = saisir_non_vide("Nom: ")
                 biblio.ajouter_membre(Membre(id_membre, nom))
                 print("Membre inscrit avec succès!")
+                
             # 3. Emprunter un livre ---------------------
             case "3":
                 id_membre = valider_id("ID membre: ")
                 titre = saisir_non_vide("Titre: ")
                 biblio.emprunter_livre(id_membre, titre)
                 print("Livre emprunté avec succès! ID Membre: ", id_membre)
+                
             # 4. Rendre un livre ---------------------
             case "4":
                 id_membre = valider_id("ID membre: ")
                 titre = saisir_non_vide("Titre: ")
                 biblio.rendre_livre(id_membre, titre)
                 print("Livre retourné avec succès! ID Membre: ", id_membre)
+                
             # 5. Lister tous les livres ---------------------
             case "5":
                 print("---------- Liste des livres ----------\n" + biblio.lister_livres())
+                
             # 6. Lister tous les membres ---------------------
             case "6":
                 print("---------- Liste des membres ----------\n" + biblio.lister_membres())
+                
             # 7. Afficher les statistiques ---------------------
             case "7":
                 while True:
@@ -113,6 +119,7 @@ while True:
                             break
                         case _:
                             print("Option invalide! Veuillez entrer 1,2 ou 3.")
+                            
             # 8. Sauvegarder et quitter ---------------------
             case "8":
                 biblio.sauvegarder()
