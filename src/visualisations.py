@@ -33,7 +33,7 @@ def top_auteurs(livres, top_n=10):
     nb_livres = [a[1] for a in auteur_count] # Liste pour l'axe des ordonnées
 
     plt.figure(figsize=(10, 5))
-    plt.bar(noms, nb_livres, color='cyan')
+    plt.bar(noms, nb_livres, color='darkblue')
     plt.title(f"Top {top_n} des auteurs les plus populaires")
     plt.xlabel("Auteur")
     plt.ylabel("Nombre de livres")
