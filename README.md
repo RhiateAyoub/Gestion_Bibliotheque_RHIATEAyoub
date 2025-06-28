@@ -1,6 +1,6 @@
 ## 📚 Gestion Bibliothèque
 ![Python](https://img.shields.io/badge/python-3.10+-blue)
-![Status](https://img.shields.io/badge/status-En%20cours-yellow)
+![Status](https://img.shields.io/badge/status-Terminé-yellow)
 ![Interface](https://img.shields.io/badge/interface-CLI-orange)
 
 Une application en ligne de commande (CLI), développée en **Python**, pour gérer les livres, les membres, les emprunts et les rendus d'une bibliothèque.
